@@ -1,29 +1,29 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata:
-  name: mytestapp 
+  name: mytomcatpod
 spec:
   replicas: 2 
   selector:
    matchLabels:
-    app: mytestapp 
+    app: mytomcatpod
   template:
     metadata: 
       labels:
-        app: mytestapp
+        app: mytomcatpod
     spec:
       containers:
-      - name: mytestapp
-        image: ashu1185/sprint6dockerjenkinsgcloud:tagversion 
+      - name: mytomcatpod
+        image: ashu1185/dockerjenkinsapache1:tagversion  
         ports:
         - containerPort: 8080
 ---
 apiVersion: v1 
 kind: Service 
 metadata:
-  name: mytestapp-svc 
+  name: mytomcatpod-svc 
   labels:
-    app: mytestapp 
+    app: mytomcatpod 
 spec:
   type: LoadBalancer 
   ports:
@@ -31,4 +31,4 @@ spec:
     port: 80
     targetPort: 8080 
   selector:
-    app: mytestapp
+    app: mytomcatpod
