@@ -5,7 +5,7 @@ pipeline {
             registryCredential = 'dockerhubcredentials'
             dockerImage = ''
 		              PROJECT_ID = 'my-first-project-278420'
- 		              CLUSTER_NAME = 'sprint6-kubectl-cluster'
+ 		              CLUSTER_NAME = 'sprint6-kubectl-cluster-gcloud'
  		              LOCATION = 'europe-west3-c'
  		              CREDENTIALS_ID = 'sprint6-k8'
         }
