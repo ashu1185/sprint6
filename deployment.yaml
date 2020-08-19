@@ -1,19 +1,19 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata:
-  name: mytomcatpod
+  name: tomcatpod1
 spec:
   replicas: 2 
   selector:
    matchLabels:
-    app: mytomcatpod
+    app: tomcatpod1
   template:
     metadata: 
       labels:
-        app: mytomcatpod
+        app: tomcatpod1
     spec:
       containers:
-      - name: mytomcatpod
+      - name: tomcatpod1
         image: ashu1185/mytomcatimage1:tagversion  
         ports:
         - containerPort: 8080
@@ -21,9 +21,9 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata:
-  name: mytomcatpod-svc 
+  name: tomcatpod1-svc 
   labels:
-    app: mytomcatpod 
+    app: tomcatpod1 
 spec:
   type: LoadBalancer 
   ports:
@@ -31,4 +31,4 @@ spec:
     port: 80
     targetPort: 8080 
   selector:
-    app: mytomcatpod
+    app: tomcatpod1
