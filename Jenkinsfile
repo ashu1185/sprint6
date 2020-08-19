@@ -11,7 +11,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("ashu1185/mydockerimage")
+        app = docker.build("ashu1185/mydockerimage1")
     }
 
     stage('Test image') {
@@ -21,7 +21,7 @@ node {
     }
 
     stage('Push image') {
-           docker.withRegistry('https://registry.hub.docker.com', 'docker-cred') {
+           docker.withRegistry('https://registry.hub.docker.com', 'dockerhubcredentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
