@@ -11,7 +11,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("ashu1185/docker")
+        app = docker.build("ashu1185/mydockerimage")
     }
 
     stage('Test image') {
