@@ -1,7 +1,7 @@
 pipeline {
         agent any
         environment {
-            registry = "ashu1185/dockerjenkinsapache1"
+            registry = "ashu1185/mytomcatimage1"
             registryCredential = 'dockerhubcredentials'
             dockerImage = ''
 		        PROJECT_ID = 'my-first-project-278420'
